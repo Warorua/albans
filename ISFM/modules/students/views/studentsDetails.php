@@ -283,8 +283,18 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-12">
+                    <a class="btn btn-primary" style="width:100%" href="#"><i class="fa fa-money"></i> Pay School Fees</a>
+                  <?php
+                  $_SESSION['pupil'] = $studentId;
+                  $_SESSION['user'] = $userId;
+                  echo $_SESSION['user']." - The user<br/>";
+                  echo $_SESSION['pupil']." - The pupil";
+
+                  ?>
+                </div>
             </div>
-            <!---Start Rigth Site Content-->
+             <!---Start Rigth Site Content-->
         </div>
         <!-- BEGIN TAB PORTLET-->
         <div class="portlet box stuDentDetails tabbable">

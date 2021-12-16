@@ -41,7 +41,10 @@
                 <div class="portlet box green">
                     <div class="portlet-title">
                         <div class="caption">
-                            "<?php echo $class; ?>" <?php echo $examTitle; ?> <?php echo lang('exa_frsheet'); ?>
+                            <?php
+                              $query = $this->db->query("SELECT * FROM class WHERE id=$class")->row();
+                              $myclass = $query->section;
+                            echo $myclass ?> <?php echo $examTitle; ?> <?php echo lang('exa_frsheet'); ?>
                         </div>
                         <div class="tools">
                         </div>

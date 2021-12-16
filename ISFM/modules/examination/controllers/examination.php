@@ -791,7 +791,7 @@ class Examination extends MX_Controller {
         for ($a = 1; $a <= $i; $a++) {
             $rollNumber = $this->input->post("rollNumber_$a", TRUE);
             $result = $this->input->post("result_$a", TRUE);
-            $greadInfo = $this->input->post("gread_$a", TRUE);
+            $greadInfo = $this->input->post("grade_$a", TRUE);
             $grade = explode(",", $greadInfo);
             $resultInfo = array(
                 'exam_id' => $this->db->escape_like_str($examID),
@@ -897,7 +897,7 @@ class Examination extends MX_Controller {
             $examId = $rowInfo['exam_id'];
             $subject = $rowInfo['subject'];
             $approuveSubject = $this->exammodel->approuveSubjectAmount($class_id, $examTitle);
-            $classSubject = $this->exammodel->classSubjectAmount($class_id);
+            $classSubject = $this->exammodel->classSubjectAmount($examId);
             //By this if conditation we are chacking that all subjects result was submited or not
             //When all subjects result is submited in that time insert the informations in "result_action" table then it will ready for final calculation.
             if ($approuveSubject == $classSubject) {

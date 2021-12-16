@@ -109,10 +109,10 @@ class Sclass extends MX_Controller {
     public function addClassRoutin() {
         $class_id = $this->input->post('class', TRUE);
         $classTitle = $this->common->class_title($class_id);
-        //if admin set section for any class then bellow [if(){ condition]  will execute ***(Start)***
+        //if admin set section for any class then Below [if(){ condition]  will execute ***(Start)***
         if ($this->input->post('section', TRUE)) {
             $section = $this->input->post('section', TRUE);
-            //if admin set "all" section for any class then bellow [if(){ condition]  will execute ***(Start)***
+            //if admin set "all" section for any class then Below [if(){ condition]  will execute ***(Start)***
             if ($section == 'all') {
                 if ($this->input->post('submit2', TRUE)) {
                     $day = $this->input->post('day', TRUE);
@@ -155,7 +155,7 @@ class Sclass extends MX_Controller {
                     $this->load->view('temp/footer');
                 }
             }
-            //if admin set "Section A or any specific section" for any class then bellow [ealse{ condition]  will execute ***(Start)***
+            //if admin set "Section A or any specific section" for any class then Below [ealse{ condition]  will execute ***(Start)***
             else {
                 if ($this->input->post('submit2', TRUE)) {
                     $day = $this->input->post('day', TRUE);
@@ -199,7 +199,7 @@ class Sclass extends MX_Controller {
                 }
             }
         }
-        //if admin do not set section for any class then bellow [else{ condition]  will execute ***(Start)***
+        //if admin do not set section for any class then Below [else{ condition]  will execute ***(Start)***
         else {
             if ($this->input->post('submit2', TRUE)) {
                 $day = $this->input->post('day', TRUE);

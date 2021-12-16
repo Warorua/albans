@@ -133,9 +133,9 @@ class ExamModel extends CI_Model {
     }
 
     //This function return class subject amount
-    public function classSubjectAmount($class_id) {
+    public function classSubjectAmount($examId) {
         $subject = array();
-        $query = $this->db->query("SELECT id FROM class_subject WHERE class_id=$class_id AND optional!=1");
+        $query = $this->db->query("SELECT * FROM result_submition_info WHERE exam_id=$examId");
         foreach ($query->result_array() as $row) {
             $subject[] = $row;
         }
@@ -183,7 +183,7 @@ class ExamModel extends CI_Model {
     }
 
     //THis function count the total point avarage that point.
-    public function pointAverage($studentId, $classSubject) {
+    public function pointAverage($studentId, $examId) {
         $data = array();
 //      $query = $this->db->get_where('result_shit', array('student_id' => $studentId));
         $query = $this->db->query("SELECT point FROM result_shit WHERE student_id=$studentId");
@@ -191,7 +191,14 @@ class ExamModel extends CI_Model {
             $data[] = $row['point'];
         }
         $totalPoint = array_sum($data);
-        $result = $totalPoint / $classSubject;
+        $query = $this->db->query("SELECT DISTINCT(exam_subject) FROM result_shit WHERE student_id=$studentId AND exam_id=$examId");
+        
+        foreach ($query->result_array() as $row) {
+            $data[] = $row;
+        }
+        $subjectAmount = count($data);
+
+        $result = $totalPoint / $subjectAmount;
         return round($result, 2);
     }
 
