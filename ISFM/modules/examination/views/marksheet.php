@@ -43,8 +43,19 @@
                 <!--BEGIN EXAMPLE TABLE PORTLET-->
                 <div class="col-md-12 markshitMotherDive">
                     <h1> <?php echo $examTitle; ?> <small class="markshitMotherDiveSmol"><?php echo lang('exa_mrk_shee'); ?></small></h1>
-                    <?php echo lang('exa_stna'); ?> : &nbsp;&nbsp;<?php echo $studentName; ?><br>
+                    <?php
+                    $query = $this->db->query("SELECT * FROM student_info WHERE student_id=$studentId")->row();
+                    $user_name = $query->student_nam;
+                    //$studentTitle
+                    //$user_name
+                    echo lang('exa_stna'); ?> : &nbsp;&nbsp;<?php echo $user_name; ?><br>
                     <?php echo lang('exa_sid'); ?> : &nbsp;&nbsp;<?php echo $studentId; ?><br>
+                    <?php
+                    /*echo $examId."<br/>";
+                    echo $class_id."<br/>";
+                    echo $studentId."<br/>";*/
+
+                    ?>
                 </div>
                 <div class="portlet box green">
                     <div class="portlet-title">
@@ -76,7 +87,30 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($markshit as $row) { ?>
+                                <?php
+                                $data = array();
+                                $query = $this->db->get_where('result_shit', array('exam_id' => $examId, 'class_id' => $class_id, 'student_id' => $studentId));
+                                foreach ($query->result_array() as $row) { 
+                                  /*  echo '
+                                    <tr>
+                                        <td>
+                                            '.$row['exam_subject'].'
+                                        </td>
+                                        <td>
+                                            '.$row['mark'].'
+                                        </td>
+                                        <td>
+                                            '.$row['grade'].'
+                                        </td>
+                                        <td>
+                                            '.$row['point'].'
+                                        </td>
+                                        <td>
+                                            '.$row['result'].'
+                                        </td>
+                                    </tr>
+                                    ';*/
+                                    ?>
                                     <tr>
                                         <td>
                                             <?php echo $row['exam_subject']; ?> 

@@ -1044,6 +1044,8 @@ class Examination extends MX_Controller {
                 $data['examTitle'] = $this->exammodel->examTitle($examId);
                 $data['studentId'] = $studentId;
                 $data['studentName'] = $this->input->post('studentTitle', TRUE);
+                $data['examId'] = $examId;
+                $data['class_id'] = $class_id;
                 $this->load->view('temp/header');
                 $this->load->view('marksheet', $data);
                 $this->load->view('temp/footer');
