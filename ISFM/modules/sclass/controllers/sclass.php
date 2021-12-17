@@ -244,7 +244,7 @@ class Sclass extends MX_Controller {
         }
     }
 
-    //This function gives us class section and class info.
+    //This function gives us Class Stream and class info.
     public function ajaxClassInfo() {
         $class_id = $this->input->get('q');
         $query = $this->common->getWhere('class', 'id', $class_id);
@@ -382,7 +382,7 @@ class Sclass extends MX_Controller {
         $this->load->view('viewRoutine', $data);
         $this->load->view('temp/footer');
     }
-    //This function gives us class section and class info.
+    //This function gives us Class Stream and class info.
     public function ajaxpromotion() {
         $classTitle = $this->input->get('q');
         $query = $this->common->getWhere('class', 'class_title', $classTitle);

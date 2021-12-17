@@ -23,8 +23,8 @@ class CommonController extends CI_Controller
         $this->lang->load('auth');
         }
 
-    //This function will return class section by class title.
-    //If thst class do not have any class section then return a message "This class has no section."
+    //This function will return Class Stream by class title.
+    //If thst class do not have any Class Stream then return a message "This class has no section."
     public function ajaxClassInfo()
         {
         $classTitle = $this->input->get('q',TRUE);

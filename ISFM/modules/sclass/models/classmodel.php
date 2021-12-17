@@ -105,7 +105,7 @@ class Classmodel extends CI_Model {
         }
     }
 
-    //This function will return class section student capacity
+    //This function will return Class Stream student capacity
     public function sectionCap($classId) {
         $data = array();
         $query = $this->db->query("SELECT section_student_capacity FROM class WHERE id='$classId'");
@@ -114,7 +114,7 @@ class Classmodel extends CI_Model {
         }
     }
 
-    //This function will return student new class section by his studentid
+    //This function will return student new Class Stream by his studentid
     public function sectionSelect($studentId, $i) {
         $data = array();
         $query = $this->db->query("SELECT class_title,sex FROM class WHERE student_id='$studentId'");

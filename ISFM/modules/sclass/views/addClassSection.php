@@ -59,9 +59,17 @@
                                     <label class="col-md-3 control-label"> <?php echo lang('clas_group'); ?> <span class="requiredStar"> </span></label>
                                     <div class="col-md-6">
                                         <div id="div_scents">
-                                            <input type="text" name="group" class="form-control classGroupInput" placeholder="<?php echo lang('clas_group_plaseh'); ?>">
+                                            <select name="group" class="form-control"  data-validation="required" data-validation-error-msg="Select the group level first.">
+                                            <option value=""><?php echo lang('select'); ?></option>
+                                            <option value="Play-Group">Play-Group</option>
+                                            <option value="Pre-Primary Group">Pre-Primary Group</option>
+                                            <option value="Primary Group">Primary Group</option>
+                                            <option value="Junior Secondary School">Junior Secondary School</option>
+                                            <option value="Senior Secondary School">Senior Secondary School</option>
+                                            <option value="Higher Education">Higher Education</option>
+                                           </select>
                                         </div>
-                                        <button id="addGroup" class="btn green-meadow floatRight" type="button"><?php echo lang('clas_add_group'); ?></button>
+                                       <!--- <button id="addGroup" class="btn green-meadow floatRight" type="button"><?php echo lang('clas_add_group'); ?></button>----->
                                     </div>
                                 </div>
 
@@ -77,27 +85,13 @@
                                 <div class="form-group">
                                     <label class="col-md-3 control-label"><?php echo lang('clas_sec_capaci'); ?><span class="requiredStar"> * </span></label>
                                     <div class="col-md-6">
-                                        <select name="capicity" class="form-control"  data-validation="required" data-validation-error-msg="Select section's student capacity.">
-                                            <option value=""><?php echo lang('select'); ?></option>
-                                            <option value="10"><?php echo lang('clas_10stu'); ?></option>
-                                            <option value="20"><?php echo lang('clas_20stu'); ?></option>
-                                            <option value="30"><?php echo lang('clas_30stu'); ?></option>
-                                            <option value="40"><?php echo lang('clas_40stu'); ?></option>
-                                            <option value="50"><?php echo lang('clas_50stu'); ?></option>
-                                            <option value="60"><?php echo lang('clas_60stu'); ?></option>
-                                            <option value="70"><?php echo lang('clas_70stu'); ?></option>
-                                            <option value="80"><?php echo lang('clas_80stu'); ?></option>
-                                            <option value="90"><?php echo lang('clas_90stu'); ?></option>
-                                            <option value="100"><?php echo lang('clas_100stu'); ?></option>
-                                            <option value="150"><?php echo lang('clas_150stu'); ?></option>
-                                            <option value="200"><?php echo lang('clas_200stu'); ?></option>
-                                        </select>
-                                    </div>
+                                    <input type="number" name="capicity" class="form-control classGroupInput" placeholder="Students in the stream.">
+                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label"> <?php echo lang('clas_code'); ?> <span class="requiredStar"> * </span></label>
                                     <div class="col-md-6">
-                                        <input type="text" onkeyup="classSection(this.value)" class="form-control" placeholder="<?php echo lang('clas_code_plash'); ?>"  data-validation="required" data-validation-error-msg="<?php echo lang('clas_code_requir'); ?>">
+                                        <input type="number" onkeyup="classSection(this.value)" class="form-control" placeholder="<?php echo lang('clas_code_plash'); ?>"  data-validation="required" data-validation-error-msg="<?php echo lang('clas_code_requir'); ?>">
                                         <span id="ajaxResult" class="classCodeCheck"></span>
                                     </div>
                                 </div>
@@ -128,7 +122,7 @@
         $('#addGroup').live('click', function() {
             if (x < maxFild) {
                 x++;
-                $('<div id="remove" class="addGroupMarginBottom"><input type="text" name="group_' + i + '" class="form-control" placeholder="Group title here"> <a href="#" id="remGroup">Remove</a></div>').appendTo(scntDiv);
+                $('<div id="remove" class="addGroupMarginBottom"><input type="text" name="group_' + i + '" class="form-control" placeholder="Students in the stream."> <a href="#" id="remGroup">Remove</a></div>').appendTo(scntDiv);
                 i++;
                 return false;
             }

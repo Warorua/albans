@@ -15,7 +15,7 @@ class leave extends CI_Controller {
                 'year' => $this->db->escape_like_str($year),
                 'sender_id' => $this->db->escape_like_str($this->input->post('sendrId', TRUE)),
                 'sender_title' => $this->db->escape_like_str($this->input->post('sendrTitle', TRUE)),
-                'subject' => $this->db->escape_like_str('Prayer for leave of absence.'),
+                'subject' => $this->db->escape_like_str('Application for leave of absence.'),
                 'jobtype' => $this->db->escape_like_str($this->input->post('jobType', TRUE)),
                 'leave_start' => $this->db->escape_like_str(strtotime($this->input->post('startDate', TRUE))),
                 'leave_end' => $this->db->escape_like_str(strtotime($this->input->post('endDate', TRUE))),

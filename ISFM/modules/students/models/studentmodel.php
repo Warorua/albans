@@ -13,7 +13,7 @@ class Studentmodel extends CI_Model {
         $this->load->dbforge();
     }
 
-    //This function return class section 
+    //This function return Class Stream 
     public function classSection($class_id) {
         $data = array();
         $query = $this->db->query("SELECT section FROM class WHERE id=$class_id");
@@ -88,13 +88,13 @@ class Studentmodel extends CI_Model {
         return $data;
     }
 
-    //This function return a class section by this class title.
+    //This function return a Class Stream by this class title.
     public function section($a) {
         $query = $this->common->getWhere('class', 'class_title', $a);
         foreach ($query as $row) {
             $data = $row;
         }
-        //making here Class Section fild.
+        //making here Class Stream fild.
         if (!empty($data['section'])) {
             $section = $data['section'];
             $sectionArray = explode(",", $section);

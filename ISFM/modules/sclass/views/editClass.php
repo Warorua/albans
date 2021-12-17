@@ -130,7 +130,7 @@
         $('#addGroup').live('click', function() {
             if (x < maxFild) {
                 x++;
-                $('<div id="remove" class="addGroupMarginBottom"><input type="text" name="group_' + i + '" class="form-control" placeholder="Group title here"> <a href="#" id="remGroup">Remove</a></div>').appendTo(scntDiv);
+                $('<div id="remove" class="addGroupMarginBottom"><input type="text" name="group_' + i + '" class="form-control" placeholder="Students in the stream."> <a href="#" id="remGroup">Remove</a></div>').appendTo(scntDiv);
                 i++;
                 return false;
             }

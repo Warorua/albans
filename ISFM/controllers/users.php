@@ -475,7 +475,7 @@ class Users extends CI_Controller {
         }
         $Class_code = $data['classCode'];
 
-        //making here Class Section fild.
+        //making here Class Stream fild.
         if (!empty($data['section'])) {
             $section = $data['section'];
             $sectionArray = explode(",", $section);

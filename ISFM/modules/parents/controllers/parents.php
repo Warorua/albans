@@ -34,7 +34,7 @@ class Parents extends CI_Controller {
         }
     }
     //This function is used for filtering to get students information(which class and which section if the section in that class)
-    //If any one want to select class section for get that section's parents thene he can call this ajax function from view file.
+    //If any one want to select Class Stream for get that section's parents thene he can call this ajax function from view file.
     public function ajaxClassSection() {
         $classTitle = $this->input->get('q');
         $query = $this->common->getWhere('class', 'class_title', $classTitle);

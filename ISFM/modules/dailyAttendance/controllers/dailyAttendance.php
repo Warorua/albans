@@ -108,7 +108,7 @@ class DailyAttendance extends MX_Controller {
             $this->db->update('class', $data_3);
             redirect('dailyAttendance/attendanceCompleteMessage', 'refresh');
         } else {
-            //Load attendence view before takeing attendence with class,All section and specific class section
+            //Load attendence view before takeing attendence with class,All section and specific Class Stream
             $classTitle = $this->input->post('class_title', TRUE);
             if ($this->input->post('section', TRUE)) {
                 $Section = $this->input->post('section', TRUE);
@@ -208,7 +208,7 @@ class DailyAttendance extends MX_Controller {
     }
 
     public function attendencePreview() {
-        //Load attendence view before takeing attendence with class,All section and specific class section
+        //Load attendence view before takeing attendence with class,All section and specific Class Stream
         $classTitle = $this->input->post('class_title', TRUE);
         $date = $this->input->post('date', TRUE);
         $intDate = strtotime($date);
@@ -263,7 +263,7 @@ class DailyAttendance extends MX_Controller {
         }
     }
 
-    //This function send class section to view by ajax. 
+    //This function send Class Stream to view by ajax. 
     public function ajaxAttendencePreview() {
         $classTitle = $this->input->get('q', TRUE);
         $query = $this->common->getWhere('class', 'class_title', $classTitle);
